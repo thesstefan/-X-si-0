@@ -35,7 +35,8 @@ char alegerePiesa()
 void tablaGoala(char xTabla[])
 
 {
-    for ( int i = 0 ; i < 9 ; i++ ) { 
+    int i;
+    for (i= 0;i<9;i++) { 
         xTabla[i] = ' ';
     }
 }
