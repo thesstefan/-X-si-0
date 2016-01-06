@@ -1,19 +1,17 @@
 #include <cstdio>
 using namespace std;
-void instructiuni ()
-{
+void instructiuni () {
     printf("\t\t\t ***X si 0***\n\n\n\n");
     printf("Pentru a plasa piesa intr-un patrat\ntrebuie sa scrii litera corespunzatoare acestuia.\n\n");
     printf("Astfel,corespondenta patrat litera este urmatoarea : \n\n");
-	printf("\t  1 | 2 | 3 \n");
+    printf("\t  1 | 2 | 3 \n");
     printf("\t ---+---+---\n");
     printf("\t  4 | 5 | 6 \n");
     printf("\t ---+---+---\n");
     printf("\t  7 | 8 | 9 \n\n\n");
 }
 
-char alegerePiesa()
-{
+char alegerePiesa() {
     char piesaPlayer;
     printf ("Cu ce piesa vrei sa joci (X/0) : ");
     scanf ("%c",&piesaPlayer);
@@ -37,17 +35,14 @@ void tablaGoala(char xTabla[])
     }
 }
 
-void afisareTabla(char xTabla[])
-
-{
+void afisareTabla(char xTabla[]) {
     printf ("\t  %c | %c | %c \n",xTabla[0],xTabla[1],xTabla[2]);
     printf ("\t ---+---+---\n");
     printf ("\t  %c | %c | %c \n",xTabla[3],xTabla[4],xTabla[5]);
     printf ("\t ---+---+---\n");
     printf ("\t  %c | %c | %c \n\n\n",xTabla[6],xTabla[7],xTabla[8]);
 }
-void playerMove (char xTabla[],char player)
-{
+void playerMove (char xTabla[],char player) {
     int mPlayer;
 
     printf ("Alege patratul in care vrei sa plasezi piesa (1-9) : ");
@@ -247,75 +242,74 @@ int castigator (char xTabla[],char player,char computer)
 
 {
 
-    if (xTabla[0] == player && xTabla[1] == player && xTabla[2] == player){
+    if (xTabla[0] == player && xTabla[1] == player && xTabla[2] == player) { 
         return 1;
     }
 
-    else if (xTabla[0] == computer && xTabla[1] == computer && xTabla[2] == computer){
+    else if (xTabla[0] == computer && xTabla[1] == computer && xTabla[2] == computer) {
         return 2;
     }
 
-    else if (xTabla[3] == player && xTabla[4] == player && xTabla[5] == player){
+    else if (xTabla[3] == player && xTabla[4] == player && xTabla[5] == player) {
         return 1;
     }
 
-    else if (xTabla[3] == computer && xTabla[4] == computer && xTabla[5] == computer){
+    else if (xTabla[3] == computer && xTabla[4] == computer && xTabla[5] == computer) {
         return 2;
     }
 
-    else if (xTabla[6] == player && xTabla[7] == player && xTabla[8] == player){
+    else if (xTabla[6] == player && xTabla[7] == player && xTabla[8] == player) {
         return 1;
     }
 
-    else if (xTabla[6] == computer && xTabla[7] == computer && xTabla[8] == computer){
+    else if (xTabla[6] == computer && xTabla[7] == computer && xTabla[8] == computer) {
         return 2;
     }
 
-    else if (xTabla[0] == player && xTabla[3] == player && xTabla[6] == player){
+    else if (xTabla[0] == player && xTabla[3] == player && xTabla[6] == player) {
         return 1;
     }
 
-    else if (xTabla[0] == computer && xTabla[3] == computer && xTabla[6] == computer){
+    else if (xTabla[0] == computer && xTabla[3] == computer && xTabla[6] == computer) {
         return 2;
     }
 
-    else if (xTabla[1] == player && xTabla[4] == player && xTabla[7] == player){
+    else if (xTabla[1] == player && xTabla[4] == player && xTabla[7] == player) {
         return 1;
     }
 
-    else if (xTabla[1] == computer && xTabla[4] == computer && xTabla[7] == computer){
+    else if (xTabla[1] == computer && xTabla[4] == computer && xTabla[7] == computer) {
         return 2;
     }
 
-    else if (xTabla[2] == player && xTabla[5] == player && xTabla[8] == player){
+    else if (xTabla[2] == player && xTabla[5] == player && xTabla[8] == player) {
         return 1;
     }
 
-    else if (xTabla[2] == computer && xTabla[5] == computer && xTabla[8] == computer){
+    else if (xTabla[2] == computer && xTabla[5] == computer && xTabla[8] == computer) {
         return 2;
     }
 
-    else if (xTabla[0] == player && xTabla[4] == player && xTabla[8] == player){
+    else if (xTabla[0] == player && xTabla[4] == player && xTabla[8] == player) {
         return 1;
     }
 
-    else if (xTabla[0] == computer && xTabla[4] == computer && xTabla[8] == computer){
+    else if (xTabla[0] == computer && xTabla[4] == computer && xTabla[8] == computer) {
         return 2;
     }
 
-    else if (xTabla[6] == player && xTabla[4] == player && xTabla[2] == player){
+    else if (xTabla[6] == player && xTabla[4] == player && xTabla[2] == player) {
         return 1;
     }
 
-    else if (xTabla[6] == computer && xTabla[4] == computer && xTabla[2] == computer){
+    else if (xTabla[6] == computer && xTabla[4] == computer && xTabla[2] == computer) {
         return 2;
     }
 
     else return 0;
 }
 
-int main ()
-{
+int main () {
     char player;
     char computer;
     char tabla[10];
@@ -333,7 +327,7 @@ int main ()
     printf ("\nOk.Eu voi juca cu %c , iar tu vei juca cu %c.\n\n",computer,player);
     afisareTabla(tabla);
     int t = 0;
-    while (t <= 9 && !castigator(tabla,player,computer)){
+    while (t <= 9 && !castigator(tabla,player,computer)) {
       playerMove(tabla,player);
       afisareTabla(tabla);
       computerMove(tabla,player,computer);
@@ -341,12 +335,12 @@ int main ()
       castigator(tabla,player,computer);
       t = t + 2;
     }
-	switch (castigator(tabla,player,computer)){
+	switch (castigator(tabla,player,computer)) {
 		case 1 : printf ("\nAi castigat.Bucura-te cat mai poti.Jur ca nu se va mai intampla.");
 				 break;
 		case 2 : printf ("\nAi pierdut.Era de asteptat ca nu vei reusi sa ma invingi.");
 				 break;
- 	   case 0 : printf ("\nM-ai egalat.Ai fost norocos.");
-    }
+ 	   	case 0 : printf ("\nM-ai egalat.Ai fost norocos.");
+       }
        return 0;
 }
