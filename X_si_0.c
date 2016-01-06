@@ -1,6 +1,8 @@
-#include <cstdio>
-using namespace std;
-void instructiuni () {
+#include <stdio.h>
+
+void instructiuni () 
+
+{
     printf("\t\t\t ***X si 0***\n\n\n\n");
     printf("Pentru a plasa piesa intr-un patrat\ntrebuie sa scrii litera corespunzatoare acestuia.\n\n");
     printf("Astfel,corespondenta patrat litera este urmatoarea : \n\n");
@@ -11,7 +13,9 @@ void instructiuni () {
     printf("\t  7 | 8 | 9 \n\n\n");
 }
 
-char alegerePiesa() {
+char alegerePiesa()
+
+{
     char piesaPlayer;
     printf ("Cu ce piesa vrei sa joci (X/0) : ");
     scanf ("%c",&piesaPlayer);
@@ -20,13 +24,14 @@ char alegerePiesa() {
         printf ("\n\nCu ce piesa vrei sa joci (X/0) : ");
         scanf ("%c",&piesaPlayer);
     }
-    if ( piesaPlayer == 'X' || piesaPlayer == 'x') {
+    if (piesaPlayer == 'X' || piesaPlayer == 'x') {
         return 'X';
     }
     else if ( piesaPlayer == '0' ) { 
         return '0';
     }
 }
+
 void tablaGoala(char xTabla[])
 
 {
@@ -35,33 +40,38 @@ void tablaGoala(char xTabla[])
     }
 }
 
-void afisareTabla(char xTabla[]) {
+void afisareTabla(char xTabla[])
+{
     printf ("\t  %c | %c | %c \n",xTabla[0],xTabla[1],xTabla[2]);
     printf ("\t ---+---+---\n");
     printf ("\t  %c | %c | %c \n",xTabla[3],xTabla[4],xTabla[5]);
     printf ("\t ---+---+---\n");
     printf ("\t  %c | %c | %c \n\n\n",xTabla[6],xTabla[7],xTabla[8]);
 }
-void playerMove (char xTabla[],char player) {
-    int mPlayer;
 
+void playerMove (char xTabla[],char player)
+
+{
+    int mPlayer;
     printf ("Alege patratul in care vrei sa plasezi piesa (1-9) : ");
     scanf ("%d",&mPlayer);
     printf ("\n\n");
-    while ( mPlayer < 1 || mPlayer > 9 || xTabla [mPlayer-1] != ' ') {
+    while (mPlayer < 1 || mPlayer > 9 || xTabla [mPlayer-1] != ' ') {
     	printf("Alegerea ta este invalida.Patratul ales este ocupat sau nu exista.\n\n");
     	printf("Alege patratul in care vrei sa plasezi piesa (1-9) : ");
         scanf("%d",&mPlayer);
         printf("\n\n");
     }
-    for ( int i = 1 ; i < 10 ; i ++) {
-        if ( mPlayer == i && xTabla[i-1] == ' '){
+    int i;
+    for (i = 1 ; i < 10 ; i++) {
+        if (mPlayer == i && xTabla[i-1] == ' '){
                 xTabla[i-1] = player;
             }
     }
 }
 
 void computerMove (char xTabla[],char player,char computer)
+
 {
     if (xTabla[0] == player && xTabla[1] == player && xTabla[2] == ' ')
             xTabla[2] = computer;
@@ -132,7 +142,7 @@ void computerMove (char xTabla[],char player,char computer)
 
     else if (xTabla[1] == player && xTabla[4] == player && xTabla[7] == ' ')
             xTabla[7] = computer;
-    else{
+    else {
             if  (xTabla[0] == computer && xTabla[1] == computer && xTabla[2] == ' ')
                     xTabla[2] = computer;
 
@@ -205,9 +215,9 @@ void computerMove (char xTabla[],char player,char computer)
             else if (xTabla[1] == computer && xTabla[4] == computer && xTabla[7] == ' ')
                     xTabla[7] = computer;
 
-            else{
+            else {
                     if (xTabla[4] == ' ')
-	                    xTabla[4] = computer;
+	                xTabla[4] = computer;
 
                     else if (xTabla[0] == ' ')
                     	xTabla[0] = computer;
@@ -221,7 +231,7 @@ void computerMove (char xTabla[],char player,char computer)
                     else if (xTabla[2] == ' ')
                     	xTabla[2] = computer;
 
-                    else{
+                    else {
                             if (xTabla[3] == ' ')
                             	xTabla[3] = computer;
 
@@ -233,8 +243,8 @@ void computerMove (char xTabla[],char player,char computer)
 
                             if (xTabla[1] == ' ')
 	                            xTabla[1] = computer;
-                        }
-        	    }
+                    }
+        	}
         }
 }
 
