@@ -13,8 +13,6 @@ void instructiuni () {
 
 char alegerePiesa() {
     char piesaPlayer;
-    printf("Cu ce piesa vrei sa joci (X/0) : ");
-    scanf("%c", &piesaPlayer);
     while (piesaPlayer != 'X' && piesaPlayer != 'x' && piesaPlayer != '0') {
         printf("\n\nAi ales o piesa invalida.");
         printf("\n\nCu ce piesa vrei sa joci (X/0) : ");
