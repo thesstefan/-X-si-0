@@ -21,13 +21,14 @@ char alegerePiesa() {
 
     if (piesaPlayer == 'X' || piesaPlayer == 'x') {
         return 'X';
-    } else if (piesaPlayer == '0') { 
+    } else if (piesaPlayer == '0') {
         return '0';
     }
 }
 
 void tablaGoala(char xTabla[]) {
-    for (int i = 0; i < 9; i++) { 
+    int i;
+    for (i = 0; i < 9; i++) {
         xTabla[i] = ' ';
     }
 }
@@ -53,8 +54,8 @@ void playerMove(char xTabla[], char player) {
         scanf("%d",&mPlayer);
         printf("\n\n");
     }
-
-    for (int i = 1; i < 10; i++) {
+    int i;
+    for (i = 1; i < 10; i++) {
         if (mPlayer == i && xTabla[i-1] == ' ') {
             xTabla[i-1] = player;
         }
@@ -62,102 +63,102 @@ void playerMove(char xTabla[], char player) {
 }
 
 void computerMove(char xTabla[], char player, char computer) {
-    if (xTabla[0] == player      && xTabla[1] == player && xTabla[2] == ' ')
+         if (xTabla[0] == computer && xTabla[1] == computer && xTabla[2] == ' ')
         xTabla[2] = computer;
-    else if (xTabla[0] == player && xTabla[1] == ' '    && xTabla[2] == player)
+    else if (xTabla[0] == computer && xTabla[1] == ' '      && xTabla[2] == computer)
         xTabla[1] = computer;
-    else if (xTabla[0] == ' '    && xTabla[1] == player && xTabla[2] == player)
+    else if (xTabla[0] == ' '      && xTabla[1] == computer && xTabla[2] == computer)
         xTabla[0] = computer;
-    else if (xTabla[0] == ' '    && xTabla[3] == player && xTabla[6] == player)
+    else if (xTabla[0] == ' '      && xTabla[3] == computer && xTabla[6] == computer)
         xTabla[0] = computer;
-    else if (xTabla[0] == player && xTabla[3] == ' '    && xTabla[6] == player)
+    else if (xTabla[0] == computer && xTabla[3] == ' '      && xTabla[6] == computer)
         xTabla[3] = computer;
-    else if (xTabla[0] == player && xTabla[3] == player && xTabla[6] == ' ')
+    else if (xTabla[0] == computer && xTabla[3] == computer && xTabla[6] == ' ')
         xTabla[6] = computer;
-    else if (xTabla[0] == ' '    && xTabla[4] == player && xTabla[8] == player)
-        Tabla[0] = computer;
-    else if (xTabla[0] == player && xTabla[4] == ' '    && xTabla[8] == player)
+    else if (xTabla[0] == ' '      && xTabla[4] == computer && xTabla[8] == computer)
+        xTabla[0] = computer;
+    else if (xTabla[0] == computer && xTabla[4] == ' '      && xTabla[8] == computer)
         xTabla[4] = computer;
-    else if (xTabla[0] == player && xTabla[4] == player && xTabla[8] == ' ')
+    else if (xTabla[0] == computer && xTabla[4] == computer && xTabla[8] == ' ')
         xTabla[8] = computer;
-    else if (xTabla[6] == player && xTabla[7] == player && xTabla[8] == ' ')
+    else if (xTabla[6] == computer && xTabla[7] == computer && xTabla[8] == ' ')
         xTabla[8] = computer;
-    else if (xTabla[6] == player && xTabla[7] == ' '    && xTabla[8] == player)
+    else if (xTabla[6] == computer && xTabla[7] == ' '      && xTabla[8] == computer)
         xTabla[7] = computer;
-    else if (xTabla[6] == ' '    && xTabla[7] == player && xTabla[8] == player)
+    else if (xTabla[6] == ' '      && xTabla[7] == computer && xTabla[8] == computer)
         xTabla[6] = computer;
-    else if (xTabla[6] == ' '    && xTabla[4] == player && xTabla[2] == player)
+    else if (xTabla[6] == ' '      && xTabla[4] == computer && xTabla[2] == computer)
         xTabla[6] = computer;
-    else if (xTabla[6] == player && xTabla[4] == ' '    && xTabla[2] == player)
+    else if (xTabla[6] == computer && xTabla[4] == ' '      && xTabla[2] == computer)
         xTabla[4] = computer;
-    else if (xTabla[6] == player && xTabla[4] == player && xTabla[2] == ' ')
+    else if (xTabla[6] == computer && xTabla[4] == computer && xTabla[2] == ' ')
         xTabla[2] = computer;
-    else if (xTabla[8] == ' '    && xTabla[5] == player && xTabla[2] == player)
+    else if (xTabla[8] == ' '      && xTabla[5] == computer && xTabla[2] == computer)
         xTabla[8] = computer;
-    else if (xTabla[8] == player && xTabla[5] == ' '    && xTabla[2] == player)
+    else if (xTabla[8] == computer && xTabla[5] == ' '      && xTabla[2] == computer)
         xTabla[5] = computer;
-    else if (xTabla[8] == player && xTabla[5] == player && xTabla[2] == ' ')
+    else if (xTabla[8] == computer && xTabla[5] == computer && xTabla[2] == ' ')
         xTabla[2] = computer;
-    else if (xTabla[3] == ' '    && xTabla[4] == player && xTabla[5] == player)
-        xTabla[3] = computer;
-    else if (xTabla[3] == player && xTabla[4] == ' '    && xTabla[5] == player)
+    else if (xTabla[3] == ' '      && xTabla[4] == computer && xTabla[5] == computer)
+            xTabla[3] = computer;
+    else if (xTabla[3] == computer && xTabla[4] == ' '      && xTabla[5] == computer)
         xTabla[4] = computer;
-    else if (xTabla[3] == player && xTabla[4] == player && xTabla[5] == ' ')
+    else if (xTabla[3] == computer && xTabla[4] == computer && xTabla[5] == ' ')
         xTabla[5] = computer;
-    else if (xTabla[1] == player && xTabla[4] == ' '    && xTabla[7] == player)
+    else if (xTabla[1] == computer && xTabla[4] == ' '      && xTabla[7] == computer)
         xTabla[4] = computer;
-    else if (xTabla[1] == ' '    && xTabla[4] == player && xTabla[7] == player)
+    else if (xTabla[1] == ' '      && xTabla[4] == computer && xTabla[7] == computer)
         xTabla[1] = computer;
-    else if (xTabla[1] == player && xTabla[4] == player && xTabla[7] == ' ')
+    else if (xTabla[1] == computer && xTabla[4] == computer && xTabla[7] == ' ')
         xTabla[7] = computer;
     else {
-        if (xTabla[0] == computer && xTabla[1] == computer && xTabla[2] == ' ')
-            xTabla[2] = computer;
-        else if (xTabla[0] == computer && xTabla[1] == ' '      && xTabla[2] == computer)
-            xTabla[1] = computer;
-        else if (xTabla[0] == ' '      && xTabla[1] == computer && xTabla[2] == computer)
-            xTabla[0] = computer;
-        else if (xTabla[0] == ' '      && xTabla[3] == computer && xTabla[6] == computer)
-            xTabla[0] = computer;
-        else if (xTabla[0] == computer && xTabla[3] == ' '      && xTabla[6] == computer)
-            xTabla[3] = computer;
-        else if (xTabla[0] == computer && xTabla[3] == computer && xTabla[6] == ' ')
-            xTabla[6] = computer;
-        else if (xTabla[0] == ' '      && xTabla[4] == computer && xTabla[8] == computer)
-            xTabla[0] = computer;
-        else if (xTabla[0] == computer && xTabla[4] == ' '      && xTabla[8] == computer)
-            xTabla[4] = computer;
-        else if (xTabla[0] == computer && xTabla[4] == computer && xTabla[8] == ' ')
-            xTabla[8] = computer;
-        else if (xTabla[6] == computer && xTabla[7] == computer && xTabla[8] == ' ')
-            xTabla[8] = computer;
-        else if (xTabla[6] == computer && xTabla[7] == ' '      && xTabla[8] == computer)
-            xTabla[7] = computer;
-        else if (xTabla[6] == ' '      && xTabla[7] == computer && xTabla[8] == computer)
-            xTabla[6] = computer;
-        else if (xTabla[6] == ' '      && xTabla[4] == computer && xTabla[2] == computer)
-            xTabla[6] = computer;
-        else if (xTabla[6] == computer && xTabla[4] == ' '      && xTabla[2] == computer)
-            xTabla[4] = computer;
-        else if (xTabla[6] == computer && xTabla[4] == computer && xTabla[2] == ' ')
-            xTabla[2] = computer;
-        else if (xTabla[8] == ' '      && xTabla[5] == computer && xTabla[2] == computer)
-            xTabla[8] = computer;
-        else if (xTabla[8] == computer && xTabla[5] == ' '      && xTabla[2] == computer)
-            xTabla[5] = computer;
-        else if (xTabla[8] == computer && xTabla[5] == computer && xTabla[2] == ' ')
-            xTabla[2] = computer;
-        else if (xTabla[3] == ' '      && xTabla[4] == computer && xTabla[5] == computer)
-            xTabla[3] = computer;
-        else if (xTabla[3] == computer && xTabla[4] == ' '      && xTabla[5] == computer)
-            xTabla[4] = computer;
-        else if (xTabla[3] == computer && xTabla[4] == computer && xTabla[5] == ' ')
-            xTabla[5] = computer;
-        else if (xTabla[1] == computer && xTabla[4] == ' '      && xTabla[7] == computer)
-            xTabla[4] = computer;
-        else if (xTabla[1] == ' '      && xTabla[4] == computer && xTabla[7] == computer)
-            xTabla[1] = computer;
-        else if (xTabla[1] == computer && xTabla[4] == computer && xTabla[7] == ' ')
+                 if (xTabla[0] == player      && xTabla[1] == player && xTabla[2] == ' ')
+                xTabla[2] = computer;
+            else if (xTabla[0] == player && xTabla[1] == ' '    && xTabla[2] == player)
+                xTabla[1] = computer;
+            else if (xTabla[0] == ' '    && xTabla[1] == player && xTabla[2] == player)
+                xTabla[0] = computer;
+            else if (xTabla[0] == ' '    && xTabla[3] == player && xTabla[6] == player)
+                xTabla[0] = computer;
+            else if (xTabla[0] == player && xTabla[3] == ' '    && xTabla[6] == player)
+                xTabla[3] = computer;
+            else if (xTabla[0] == player && xTabla[3] == player && xTabla[6] == ' ')
+                xTabla[6] = computer;
+            else if (xTabla[0] == ' '    && xTabla[4] == player && xTabla[8] == player)
+                xTabla[0] = computer;
+            else if (xTabla[0] == player && xTabla[4] == ' '    && xTabla[8] == player)
+                xTabla[4] = computer;
+            else if (xTabla[0] == player && xTabla[4] == player && xTabla[8] == ' ')
+                xTabla[8] = computer;
+            else if (xTabla[6] == player && xTabla[7] == player && xTabla[8] == ' ')
+                xTabla[8] = computer;
+            else if (xTabla[6] == player && xTabla[7] == ' '    && xTabla[8] == player)
+                xTabla[7] = computer;
+            else if (xTabla[6] == ' '    && xTabla[7] == player && xTabla[8] == player)
+                xTabla[6] = computer;
+            else if (xTabla[6] == ' '    && xTabla[4] == player && xTabla[2] == player)
+                xTabla[6] = computer;
+            else if (xTabla[6] == player && xTabla[4] == ' '    && xTabla[2] == player)
+                xTabla[4] = computer;
+            else if (xTabla[6] == player && xTabla[4] == player && xTabla[2] == ' ')
+                xTabla[2] = computer;
+            else if (xTabla[8] == ' '    && xTabla[5] == player && xTabla[2] == player)
+                xTabla[8] = computer;
+            else if (xTabla[8] == player && xTabla[5] == ' '    && xTabla[2] == player)
+                xTabla[5] = computer;
+            else if (xTabla[8] == player && xTabla[5] == player && xTabla[2] == ' ')
+                xTabla[2] = computer;
+            else if (xTabla[3] == ' '    && xTabla[4] == player && xTabla[5] == player)
+                xTabla[3] = computer;
+            else if (xTabla[3] == player && xTabla[4] == ' '    && xTabla[5] == player)
+                xTabla[4] = computer;
+            else if (xTabla[3] == player && xTabla[4] == player && xTabla[5] == ' ')
+                xTabla[5] = computer;
+            else if (xTabla[1] == player && xTabla[4] == ' '    && xTabla[7] == player)
+                xTabla[4] = computer;
+            else if (xTabla[1] == ' '    && xTabla[4] == player && xTabla[7] == player)
+                xTabla[1] = computer;
+            else if (xTabla[1] == player && xTabla[4] == player && xTabla[7] == ' ')
                 xTabla[7] = computer;
         else {
             if (xTabla[4] == ' ')
