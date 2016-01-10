@@ -1,6 +1,21 @@
 #include <stdio.h>
 #include "Afisare.h"
 
+char alegereMiscare(char xTabla[], char player) {
+    printf("Alege patratul in care vrei sa plasezi piesa (1-9) : ");
+    int mPlayer;
+    scanf("%d", &mPlayer);
+    printf("\n\n");
+
+    while (mPlayer < 1 || mPlayer > 9 || xTabla [mPlayer-1] != ' ') {
+        printf("Alegerea ta este invalida.Patratul ales este ocupat sau nu exista.\n\n");
+        printf("Alege patratul in care vrei sa plasezi piesa (1-9) : ");
+        scanf("%d",&mPlayer);
+        printf("\n\n");
+    }
+    return mPlayer;
+}
+
 char alegerePiesa() {
     char piesaPlayer;
     while (piesaPlayer != 'X' && piesaPlayer != 'x' && piesaPlayer != '0') {
