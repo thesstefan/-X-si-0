@@ -22,7 +22,8 @@ int main () {
     afisareTabla(tabla);
     int t = 0;
     while (t <= 9 && !castigator(tabla,player,computer)) {
-      playerMove(tabla,player);
+      char movePlayer = alegereMiscare(tabla,player);
+      playerMove(tabla,player,movePlayer);
       afisareTabla(tabla);
       computerMove(tabla,player,computer);
       afisareTabla(tabla);
