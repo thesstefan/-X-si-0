@@ -1,7 +1,7 @@
 #ifndef CALCULE_H_INCLUDED
 #define CALCULE_H_INCLUDED
 
-void playerMove(char xTabla[], char player);
+void playerMove(char xTabla[], char player, char mPlayer);
 void computerMove(char xTabla[], char player, char computer);
 int castigator(char xTabla[], char player, char computer);
 
